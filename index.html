@@ -276,7 +276,7 @@
   <!-- Navbar (Visible after login) -->
   <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-light d-none mb-4 rounded-custom shadow-custom">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Mood App</a>
+      <a class="navbar-brand" href="#">Mind Scheduler</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -322,7 +322,7 @@
       <div class="col-md-6 mb-3">
         <div class="card shadow-custom rounded-custom h-100">
           <div class="card-body text-center d-flex flex-column justify-content-center">
-            <h5>Mood Calendar</h5>
+            <h5>Mood Calender</h5>
             <button class="btn btn-primary rounded-custom-btn mt-3" onclick="showView('moodCalendar')">Go</button>
           </div>
         </div>
@@ -419,8 +419,6 @@
     </div>
   </div>
   
-
-
 <script>
       
   function applyTheme(theme) {
@@ -629,7 +627,7 @@
       const li = document.createElement('li');
       li.className = 'list-group-item d-flex justify-content-between align-items-center';
       li.innerHTML = `
-        <span class="${task.completed ? 'completed' : ''}">${task.text} (${new Date(task.date).toLocaleDateString()})</span>
+        <span class="${task.completed ? 'completed' : ''}">${task.text} (${new Date(task.date).toLocaleString()})</span>
         <div>
           <button class="btn btn-sm btn-outline-success me-1" onclick="toggleComplete(${index})">${task.completed ? 'Undo' : 'Complete'}</button>
           <button class="btn btn-sm btn-outline-primary me-1" onclick="editTask(${index})">Edit</button>
