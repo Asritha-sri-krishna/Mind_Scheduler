@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Scheduler - User Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="guide-style.css">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()">🌞</button>
+    
+    <!-- Header -->
+    <div class="guide-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold mb-3">
+                        <i class="fas fa-brain text-primary"></i>
+                        Mind Scheduler User Guide
+                    </h1>
+                    <p class="lead">Your complete mental wellness and productivity companion</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <button class="btn btn-primary btn-lg rounded-pill" onclick="window.close()">
+                        <i class="fas fa-arrow-left"></i> Back to App
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <!-- Quick Start Section -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card shadow-lg border-0 rounded-custom">
+                    <div class="card-body p-4">
+                        <h2 class="card-title text-center mb-4">
+                            <i class="fas fa-rocket text-success"></i> Quick Start
+                        </h2>
+                        <div class="row">
+                            <div class="col-md-3 text-center mb-3">
+                                <div class="step-circle">1</div>
+                                <h5>Sign Up</h5>
+                                <p class="text-muted">Create your account with email and password</p>
+                            </div>
+                            <div class="col-md-3 text-center mb-3">
+                                <div class="step-circle">2</div>
+                                <h5>Login</h5>
+                                <p class="text-muted">Access your personalized dashboard</p>
+                            </div>
+                            <div class="col-md-3 text-center mb-3">
+                                <div class="step-circle">3</div>
+                                <h5>Track Mood</h5>
+                                <p class="text-muted">Start logging your daily moods</p>
+                            </div>
+                            <div class="col-md-3 text-center mb-3">
+                                <div class="step-circle">4</div>
+                                <h5>Manage Tasks</h5>
+                                <p class="text-muted">Organize your daily activities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="row">
+            <!-- Dashboard -->
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Dashboard</h3>
+                    <p>Your central hub to access all features quickly. Get an overview of your mental wellness journey.</p>
+                    <div class="feature-steps">
+                        <div class="step-item">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span>Quick access to all modules</span>
+                        </div>
+                        <div class="step-item">
+                            <i class="fas fa-check-circle text-success"></i>
+                            <span>Personalized welcome message</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mood Calendar -->
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-heart"></i>
+                    </div>
+                    <h3>Mood Calendar</h3>
+                    <p>Track your daily emotions and identify patterns over time.</p>
+                    <div class="feature-steps">
+                        <div class="step-item">
+                            <i class="fas fa-click text-primary"></i>
+                            <span>Click any date to set mood</span>
+                        </div>
+                        <div class="step-item">
+                            <i class="fas fa-palette text-warning"></i>
+                            <span>Choose: Happy (Green), Sad (Red), Neutral (Yellow)</span>
+                        </div>
+                        <div class="step-item">
+                            <i class="fas fa-arrows-alt text-info"></i>
+                            <span>Navigate months with Previous/Next buttons</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task Noter -->
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Task Noter</h3>
+                    <p>Organize your daily tasks and boost productivity.</p>
+                    <div class="feature-steps">
+                        <div class="step-item">
+                            <i class="fas fa-plus text-success"></i>
+                            <span>Add new tasks with timestamp</span>
+                        </div>
+                        <div class="step-item">
+                            <i class="fas fa-check text-primary"></i>
+                            <span>Mark tasks as complete/incomplete</span>
+                        </div>
+                        <div class="step-item">
+                            <i class="fas fa-edit text-warning"></i>
+                            <span>Edit task descriptions</span>
+                        </div>
+                        <div class="step-item">
+                            <i class="fas fa-trash text-danger"></i>
+                            <span>Delete unwanted tasks</span>
+                        </div>
+                        <div class="step-item">
+                            <i class="fas fa-history text-info"></i>
+                            <span>View past tasks history</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mood Analytics -->
+            <div class="col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Mood Analytics</h3>
+                    <p>Visualize your mood patterns with interactive charts.</p>
+                    <div class="feature-steps">
+                        <div class="step-item">
+                            <i class="fas fa-chart-line text-info"></i>
+                            <span>Line chart shows 30-day mood trends</span>
+                        </div>
+                        <div class="step-item">
+                            <i class="fas fa-chart-pie text-success"></i>
+                            <span>Pie chart displays mood distribution</span>
+                        </div>
+                        <div class="step-item">
+                            <i class="fas fa-sync text-warning"></i>
+                            <span>Charts update automatically with new data</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SMS Reminders Section -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card shadow-lg border-0 rounded-custom bg-gradient-primary text-white">
+                    <div class="card-body p-5">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="card-title mb-3">
+                                    <i class="fas fa-sms"></i> SMS Reminders
+                                </h2>
+                                <p class="lead mb-4">Get timely SMS reminders for your meetings and important events.</p>
+                                
+                                <div class="alert alert-light text-dark mb-4">
+                                    <h5><i class="fas fa-key"></i> Access Required</h5>
+                                    <p class="mb-3">SMS functionality requires Twilio API access. To get started:</p>
+                                    <ul class="mb-0">
+                                        <li>Click the "Request Access" button</li>
+                                        <li>Fill out the access request form</li>
+                                        <li>We'll set up your SMS access within 24 hours</li>
+                                        <li>You'll receive an email with setup instructions</li>
+                                    </ul>
+                                </div>
+
+                                <h6 class="mb-3">How to Use SMS Reminders:</h6>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-phone text-warning me-2"></i>
+                                            <span>Enter recipient phone number</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-clock text-info me-2"></i>
+                                            <span>Set meeting time (24h format)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-paper-plane text-success me-2"></i>
+                                            <span>SMS sent automatically at scheduled time</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-shield-alt text-primary me-2"></i>
+                                            <span>Secure and reliable delivery</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <button class="btn btn-light btn-lg rounded-pill px-4 py-3 shadow" onclick="requestTwilioAccess()">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                    <br>
+                                    <strong>Request SMS Access</strong>
+                                </button>
+                                <p class="small mt-3 opacity-75">Free setup • 24hr response</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips & Best Practices -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card shadow-lg border-0 rounded-custom">
+                    <div class="card-body p-4">
+                        <h2 class="card-title text-center mb-4">
+                            <i class="fas fa-lightbulb text-warning"></i> Tips & Best Practices
+                        </h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tip-item">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Daily Mood Tracking</h5>
+                                        <p>Log your mood consistently every day for better insights into your emotional patterns.</p>
+                                    </div>
+                                </div>
+                                <div class="tip-item">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-target"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Set Realistic Goals</h5>
+                                        <p>Break large tasks into smaller, manageable pieces for better completion rates.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tip-item">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Review Your Analytics</h5>
+                                        <p>Check your mood analytics weekly to identify trends and triggers.</p>
+                                    </div>
+                                </div>
+                                <div class="tip-item">
+                                    <div class="tip-icon">
+                                        <i class="fas fa-moon"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Use Dark Mode</h5>
+                                        <p>Toggle to dark mode for comfortable usage during evening hours.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="card shadow-lg border-0 rounded-custom">
+                    <div class="card-body p-4">
+                        <h2 class="card-title text-center mb-4">
+                            <i class="fas fa-question-circle text-info"></i> Frequently Asked Questions
+                        </h2>
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item border-0 mb-3 rounded-custom">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button rounded-custom" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        <i class="fas fa-database me-2"></i>
+                                        Is my data safe and private?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Yes! All your data is stored locally in your browser using localStorage. No data is sent to external servers except for SMS functionality (which requires your explicit consent).
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3 rounded-custom">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed rounded-custom" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        <i class="fas fa-sync me-2"></i>
+                                        Can I access my data on different devices?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Currently, data is stored locally per device. For cross-device sync, you would need to manually export/import your data or use the same browser with sync enabled.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item border-0 mb-3 rounded-custom">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed rounded-custom" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        <i class="fas fa-money-bill-wave me-2"></i>
+                                        Is the SMS feature free?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        The setup is free.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-lg border-0 rounded-custom bg-dark text-white">
+                    <div class="card-body p-4 text-center">
+                        <h2 class="card-title mb-3">
+                            <i class="fas fa-headset"></i> Need Help?
+                        </h2>
+                        <p class="lead mb-4">We're here to support your mental wellness journey!</p>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope fa-2x mb-2 text-primary"></i>
+                                    <h5>Email Support</h5>
+                                    <p>asrithayakkala@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="contact-item">
+                                    <i class="fas fa-comments fa-2x mb-2 text-success"></i>
+                                    <h5>Live Chat</h5>
+                                    <p>Available 9 AM - 9 PM</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="contact-item">
+                                    <i class="fas fa-book fa-2x mb-2 text-warning"></i>
+                                    <h5>Contact </h5>
+                                    <p>Detailed guides & tutorials</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Twilio Access Request Modal -->
+    <div class="modal fade" id="twilioModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content rounded-custom">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-sms"></i> Request SMS Access
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="twilioAccessForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="userName" class="form-label">Full Name *</label>
+                                <input type="text" class="form-control rounded-custom" id="userName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="userEmail" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control rounded-custom" id="userEmail" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="userPhone" class="form-label">Phone Number *</label>
+                                <input type="tel" class="form-control rounded-custom" id="userPhone" required>
+                                                                <input type="tel" class="form-control rounded-custom" id="userPhone" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="userCompany" class="form-label">Company/Organization</label>
+                                <input type="text" class="form-control rounded-custom" id="userCompany">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="useCase" class="form-label">How will you use SMS reminders? *</label>
+                            <textarea class="form-control rounded-custom" id="useCase" rows="3" required placeholder="e.g., Meeting reminders, medication alerts, appointment notifications..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="expectedVolume" class="form-label">Expected monthly SMS volume *</label>
+                            <select class="form-select rounded-custom" id="expectedVolume" required>
+                                <option value="">Select volume...</option>
+                                <option value="1-50">1-50 messages</option>
+                                <option value="51-200">51-200 messages</option>
+                                <option value="201-500">201-500 messages</option>
+                                <option value="500+">500+ messages</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                <label class="form-check-label" for="agreeTerms">
+                                    I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a> *
+                                </label>
+                            </div>
+                        </div>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>What happens next?</strong>
+                            <ul class="mb-0 mt-2">
+                                <li>We'll review your request within 24 hours</li>
+                                <li>You'll receive setup instructions via email</li>
+                                <li>Free trial includes 50 SMS messages</li>
+                                <li>Full pricing details will be provided</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary rounded-custom" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary rounded-custom" onclick="submitTwilioRequest()">
+                        <i class="fas fa-paper-plane"></i> Submit Request
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-custom">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-check-circle"></i> Request Submitted!
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center p-4">
+                    <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                    <h4>Thank you!</h4>
+                    <p class="lead">Your SMS access request has been submitted successfully.</p>
+                    <p>We'll review your request and get back to you within 24 hours at the email address you provided.</p>
+                    <div class="alert alert-light">
+                        <strong>Reference ID:</strong> <span id="referenceId"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success rounded-custom" data-bs-dismiss="modal">Got it!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="guide-script.js"></script>
+</body>
+</html>
