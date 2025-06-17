@@ -1,4 +1,4 @@
-// server.js - Complete version for Supabase and Render deployment
+// server.js - CORRECTED version for Supabase and Render deployment
 require('dotenv').config();
 
 const express = require('express');
@@ -26,13 +26,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Environment variables
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001; // Added a default for local testing
 if (!PORT) {
-  console.error('❌ PORT not set by Render');
-  process.exit(1);  // Good practice for catching misconfigurations
+  console.error('❌ PORT not set');
+  process.exit(1);
 }
 
-app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
+// THIS IS THE INCORRECT LINE THAT HAS BEEN REMOVED:
+// app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-very-strong-secret-key-for-production';
 
@@ -562,8 +563,7 @@ app.get('/index.html', (req, res) => {
 
 app.get('/guide.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'guide.html'));
-});
-
+});-
 // Catch-all route for any unmatched routes
 app.get('*', (req, res) => {
   // Don't serve HTML for API routes
