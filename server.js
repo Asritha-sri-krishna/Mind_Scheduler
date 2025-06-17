@@ -206,7 +206,6 @@ async function updateTasksTx(userId, tasks) {
 const accountSid = process.env.TWILIO_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const fromPhone = process.env.TWILIO_PHONE_NUMBER;
-const twilioVerifyServiceSid = process.env.TWILIO_VERIFY_SERVICE_SID;
 
 // Initialize Twilio client only if credentials are available
 let twilioClient = null;
@@ -395,7 +394,7 @@ app.put('/api/user/mood', authenticateToken, async (req, res) => {
         await client.query(
           `INSERT INTO mood_data (user_id, date_key, mood) VALUES ($1, $2, $3)
            ON CONFLICT (user_id, date_key) DO UPDATE SET
-                      mood = EXCLUDED.mood`,
+          mood = EXCLUDED.mood`,
           [userId, dateKey, mood]
         );
       }
@@ -561,8 +560,8 @@ app.get('/index.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/user-guide.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'user-guide.html'));
+app.get('/guide.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'guide.html'));
 });
 
 // Catch-all route for any unmatched routes
@@ -590,7 +589,7 @@ app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
   console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`📁 Serving static files from: ${path.join(__dirname, 'public')}`);
-  console.log(`📄 Available HTML files: index.html, user-guide.html`);
+  console.log(`📄 Available HTML files: index.html, guide.html`);
 });
 
           
