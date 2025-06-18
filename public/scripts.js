@@ -1,5 +1,9 @@
 // API Configuration
-const API_URL = 'http://localhost:3000/api';
+// use in local browser
+// const API_URL = 'http://localhost:3000/api';
+// in render code
+// The Corrected Code
+const API_URL = '/api'; 
 let authToken = null;
 let currentUser = null;
 
@@ -419,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             try {
-                const response = await fetch('http://localhost:3000/api/schedule-sms', {
+                const response = await fetch('/api/schedule-sms', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
