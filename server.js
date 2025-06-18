@@ -13,13 +13,18 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(express.static('public'));
+
 const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-very-strong-secret-key-for-production';
 
 // Initialize PostgreSQL Pool
+// --- THIS IS THE NEW, CORRECT CODE ---
 const db = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 console.log(`✅ PostgreSQL client configured.`);
@@ -332,6 +337,62 @@ app.post('/api/schedule-sms', authenticateToken, (req, res) => {
 app.get('/api/verify', authenticateToken, (req, res) => {
   // If authenticateToken passes, the token is valid
   res.json({ valid: true, userId: req.user.userId, email: req.user.email });
+});
+// Add this to server.js, for example, before your '/api/verify' route
+
+// --- TWILIO ACCESS REQUEST ENDPOINT ---
+app.post('/api/twilio-access-request', async (req, res) => {
+    const { userName, userEmail, userPhone, userCompany } = req.body;
+
+    // Basic validation
+    if (!userName || !userEmail || !userPhone) {
+        return res.status(400).json({ success: false, message: 'Name, email, and phone are required.' });
+    }
+
+    const client = await db.connect();
+    try {
+        // Check if a user with this email already exists
+        const existingRequest = await client.query(
+            'SELECT id FROM twilio_access_requests WHERE email = $1', 
+            [userEmail.toLowerCase()]
+        );
+
+        if (existingRequest.rows.length > 0) {
+            // User already exists, send back a "Welcome Back" message
+            console.log(`Existing user request from: ${userEmail}`);
+            return res.json({ 
+                success: true, 
+                message: 'Existing user request noted.', 
+                isNewUser: false,
+                referenceId: existingRequest.rows[0].id
+            });
+        }
+
+        // If user is new, insert their request into the database
+        const newRequest = await client.query(
+            `INSERT INTO twilio_access_requests (name, email, phone, company) 
+             VALUES ($1, $2, $3, $4) 
+             RETURNING id`,
+            [userName, userEmail.toLowerCase(), userPhone, userCompany]
+        );
+
+        const newId = newRequest.rows[0].id;
+        console.log(`New Twilio access request submitted by ${userEmail}, ID: ${newId}`);
+
+        // Send a success response for the new user
+        res.status(201).json({ 
+            success: true, 
+            message: 'Request submitted successfully.', 
+            isNewUser: true, 
+            referenceId: newId 
+        });
+
+    } catch (error) {
+        console.error('Error in /api/twilio-access-request:', error);
+        res.status(500).json({ success: false, message: 'A server error occurred. Please try again later.' });
+    } finally {
+        client.release();
+    }
 });
 // Server start
 app.listen(PORT, () => {
