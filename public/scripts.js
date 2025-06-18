@@ -375,7 +375,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 document.getElementById('authView').classList.add('hidden');
                 document.getElementById('mainNav').classList.remove('d-none');
                 document.getElementById('userEmailDisplay').textContent = userData.email;
-                                showView('dashboard');
+                showView('dashboard');
                 renderCalendar();
                 renderTasks();
                 renderMoodChart();
