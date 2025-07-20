@@ -1,41 +1,90 @@
 # 🧠 Mind Scheduler
 
-Mind Scheduler is a comprehensive web application designed to enhance mental wellness and productivity. It allows users to track moods, manage daily tasks, analyze emotional trends, and schedule SMS reminders—all within a clean and responsive interface. The application also includes both light and dark modes to enhance user experience and accessibility.
+**Just Deployed My Full-Stack Productivity Web App: Mind Scheduler!**  
+🔗 [Live App](https://mind-scheduler.onrender.com/) • 💻 [GitHub Repo](https://github.com/Asritha-sri-krishna/Mind_Scheduler)
+
+---
+
+## 📌 Why "Mind Scheduler"?
+
+"Mind Scheduler" blends mental wellness with productivity.  
+- **Mind**: Reflects your daily mood and focus.
+- **Scheduler**: A planner with to-do lists and SMS meeting reminders.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer      | Tech Used                        |
+|------------|----------------------------------|
+| Frontend   | HTML, CSS (Bootstrap), JavaScript |
+| Backend    | Node.js, Express.js              |
+| Database   | PostgreSQL (via Supabase)        |
+| Auth       | JWT (JSON Web Tokens)            |
+| Analytics  | Chart.js                         |
+| Notifications | Twilio (SMS API)              |
+
+---
 
 ## 🌟 Key Features
 
-- 📅 **Mood Calendar:** Track daily moods via an interactive calendar. Easily switch between months and identify long-term emotional trends.
-- ✅ **Task Noter:** Add, edit, and delete tasks using a minimalist to-do list interface to efficiently organize your day.
-- 📊 **Mood Analytics:** View mood trends and distributions with interactive charts. Includes line and pie charts powered by Chart.js.
-- 📲 **SMS Reminders:** Schedule meeting reminders using a built-in form. Automatically send SMS alerts via backend integration.
-- 🌗 **Dark Mode:** Toggle between light and dark themes to match your environment or preferences.
-- 🔐 **Login/Signup System:** Personalized task lists for each user stored locally.
+- 📅 **Mood Calendar** – Log and visualize daily mood trends.
+- ✅ **To-Do Checklist** – Add, edit, delete daily tasks.
+- 📊 **Mood Analytics** – Pie & line charts powered by Chart.js.
+- 📲 **SMS Reminders** – Schedule meeting alerts via Twilio.
+- 🌗 **Dark/Light Mode** – Toggle based on preference.
+- 🔐 **Secure Auth** – JWT-based login/signup per user.
+- ☁️ **Persistent Storage** – PostgreSQL ensures data sync across devices.
 
-## 🛠️ Technologies Used
+---
+## 💻 How to Start
 
-- **Frontend:** HTML, CSS (Bootstrap), JavaScript  
-- **Backend:** JavaScript (Node.js), Fetch API (for communicating with SMS services)
-- **Libraries:**
-  - `Chart.js` for mood analytics and visualizations
-  - Twilio : for sending SMS reminders
+1. Open `index.html` to run the frontend  
+2. Backend setup (Node.js + Twilio):
+   - Clone the repo  
+   - Run `npm install`  
+   - Create `.env` with Twilio credentials  
+   - Run `node server.js` to start backend
 
-## 💻 Start the Application  
-- Open `index.html` in your preferred browser to launch the app interface.
+---
+## 📝 User Guide: SMS Reminder Setup
 
-## 📲 Enable SMS Reminders  
-- Set up a basic Node.js server with Twilio API credentials.  
-- Update `smsSender.js` with your Twilio Account SID, Auth Token, and a valid sender phone number.
+- Fill SMS form (Name, Number, Date, Time)
+- I verify and activate your reminder manually (for now)
+- Auto reminders via Twilio from backend
 
-## 🎯 Future Enhancements  
-- ✅ Google/Email login support  
-- 📱 PWA (Progressive Web App) version  
-- ☁️ Cloud sync for tasks/moods across devices  
-- 🔐 End-to-end encryption for mood and task data
+---
 
+## 🔄 My Development Journey
+
+- Started with LocalStorage  
+- Switched to SQLite → limited on cloud  
+- Finally moved to PostgreSQL + Supabase 🚀  
+- Learned:
+  - Async JS (Promises, `async/await`)  
+  - CORS & deployment env vars  
+  - Debugging with comments saves time 🧠  
+
+---
+
+## 🔮 What’s Next?
+
+- Weekly mood insights  
+- Email + SMS dual reminders  
+- Google OAuth login  
+- AI-powered usage suggestions
+
+---
 ## 📜 License  
-- This project is open-source under the MIT License.
+ - This project is open-source under the MIT License.
+---
 
+🎯 **Mission**: Build a minimal, mindful digital planner that respects your time.
 
+Try it here 👉 https://lnkd.in/grS3CbkU
+
+---
+🙌 Feedback and contributions are welcome!
 
 
 
