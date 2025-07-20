@@ -81,8 +81,6 @@
 
 🎯 **Mission**: Build a minimal, mindful digital planner that respects your time.
 
-Try it here 👉 https://lnkd.in/grS3CbkU
-
 ---
 🙌 Feedback and contributions are welcome!
 
